@@ -2,6 +2,7 @@
 @import"./components/header.scss";
 @import"./components/footer.scss";
 @import"./components/icons.scss";
+@import"./components/products-list.scss";
 @import"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 
 
@@ -10,5 +11,9 @@
     padding: 0;
     box-sizing: border-box;
     outline: none;
+}
+
+body{
+    background: #2f363e;
 }
 

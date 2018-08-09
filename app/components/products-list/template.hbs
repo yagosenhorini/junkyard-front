@@ -1,0 +1,15 @@
+<section class="products">
+    <h2 class="products__title">Valores</h2>
+    <ul class="list">
+    <ul class="products__list">
+    {{#each produto as |produtos|}} 
+    <li class="products__list--item">{{produtos.title}}</li>
+    {{/each}}
+    </ul>
+    <ul class="products__list">
+    {{#each produto as |produtos|}} 
+    <li class="products__list--price">R$ {{produtos.price}}</li>
+    {{/each}}
+    </ul>
+    </ul>
+</section>

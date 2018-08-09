@@ -1,0 +1,47 @@
+.products{
+    width: 25%;
+    height: auto;
+    margin: 10% auto;
+    background: hsla(0,0%,100%,.2);
+    padding: 37px 0;
+    border-radius: 6px;
+    box-shadow: 0 16px 32px 0 rgba(255, 255, 255, 0.100);
+    color: #fff;
+    transition: .3s;
+    -webkit-transition: all .2s ease-out;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    &.products:hover{
+        transform: translateY(-5px);
+    }
+}
+
+.products__title{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.products__list{
+    padding: 20px;
+    margin: 0 10%;
+    list-style: none;
+    font-weight: 600;
+}
+
+.products__list--item{
+    margin:5px 0;
+}
+
+.products__list--price{
+    color: rgba(189,103,109,1);
+    margin:5px 0;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
