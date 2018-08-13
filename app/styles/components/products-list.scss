@@ -1,3 +1,10 @@
+.view__list{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .products{
     width: 25%;
     height: auto;

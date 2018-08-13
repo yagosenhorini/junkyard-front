@@ -3,6 +3,8 @@
 @import"./components/footer.scss";
 @import"./components/icons.scss";
 @import"./components/products-list.scss";
+@import"./components/form.scss";
+
 @import"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 
 
@@ -11,9 +13,19 @@
     padding: 0;
     box-sizing: border-box;
     outline: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 body{
     background: #2f363e;
 }
 
+a:link{
+    text-decoration: none;
+    color: #fefdfc;
+}
+
+a:visited{
+    text-decoration: none;
+    color: #fefdfc;
+}

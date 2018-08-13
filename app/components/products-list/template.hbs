@@ -1,5 +1,6 @@
-<section class="products">
-    <h2 class="products__title">Valores</h2>
+<section class="view__list">
+<div class="products">
+    <h2 class="products__title">Valor em R$</h2>
     <ul class="list">
     <ul class="products__list">
     {{#each produto as |produtos|}} 
@@ -12,4 +13,21 @@
     {{/each}}
     </ul>
     </ul>
+</div>
+<div class="products">
+    <h2 class="products__title">Quantidade em Kg</h2>
+    <ul class="list">
+    <ul class="products__list">
+    {{#each produto as |produtos|}} 
+    <li class="products__list--item">{{#link-to 'edit' produtos.id}}{{produtos.title}}{{/link-to}}</li>
+    {{produtos.id}}
+    {{/each}}
+    </ul>
+    <ul class="products__list">
+    {{#each produto as |produtos|}} 
+    <li class="products__list--price">{{produtos.instock}}</li>
+    {{/each}}
+    </ul>
+    </ul>
+</div>
 </section>
