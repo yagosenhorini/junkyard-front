@@ -3,10 +3,11 @@ import urlTemplates from 'ember-data-url-templates';
 
 export default DS.RESTAdapter.extend(urlTemplates, {
     host: 'http://localhost:3000/',
-    namespace: 'api',
+    namespace: 'v1',
+    findAllUrlTemplate: '{+host}{namespace}/products',
     createRecordUrlTemplate: '{+host}{namespace}/products/',
-    queryRecordUrlTemplate: '{+host}{namespace}/products{/id}',
-    findAllUrlTemplate: '{+host}{namespace}/products/'
+    findRecordUrlTemplate: '{+host}{namespace}/products/{id}',
+    queryUrlTemplate: '{+host}{namespace}/products/{id}',
+    updateRecordUrlTemplate: '{+host}{namespace}/products/{id}',
 
-   
 });

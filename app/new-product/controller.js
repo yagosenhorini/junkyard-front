@@ -1,17 +1,14 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
-    enviar(newProduct) {
-        let novoProduto = newProduct;
-        novoProduto.save().then(()=>{
-            alert('Produto cadastrado');
-        }).catch(()=>{
-            console.log("error");
-        });
-    },
     actions:{
-        submit(newProduct){
-            this.enviar(newProduct);
-        }
+        enviar() {
+           return this.get('model').save().then(()=>{
+                alert('Produto cadastrado');
+                this.transitionToRoute('product');
+            }).catch((err)=>{
+                console.log(err);
+            });
+        },
     }
 });

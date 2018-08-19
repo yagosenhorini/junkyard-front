@@ -3,12 +3,12 @@
     <h2 class="products__title">Valor em R$</h2>
     <ul class="list">
     <ul class="products__list">
-    {{#each produto as |produtos|}} 
-    <li class="products__list--item">{{produtos.title}}</li>
+    {{#each model as |produtos|}} 
+    <li class="products__list--item">{{produtos.name}}</li>
     {{/each}}
     </ul>
     <ul class="products__list">
-    {{#each produto as |produtos|}} 
+    {{#each model as |produtos|}} 
     <li class="products__list--price">R$ {{produtos.price}}</li>
     {{/each}}
     </ul>
@@ -18,14 +18,14 @@
     <h2 class="products__title">Quantidade em Kg</h2>
     <ul class="list">
     <ul class="products__list">
-    {{#each produto as |produtos|}} 
-    <li class="products__list--item">{{#link-to 'edit' produtos.id}}{{produtos.title}}{{/link-to}}</li>
+    {{#each model as |produtos|}} 
+    <li class="products__list--item">{{#link-to 'edit' produtos.id}}{{produtos.name}}{{/link-to}}</li>
     {{produtos.id}}
     {{/each}}
     </ul>
     <ul class="products__list">
-    {{#each produto as |produtos|}} 
-    <li class="products__list--price">{{produtos.instock}}</li>
+    {{#each model as |produtos|}} 
+    <li class="products__list--price">{{produtos.weight}}</li>
     {{/each}}
     </ul>
     </ul>
