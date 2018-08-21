@@ -20,7 +20,7 @@
             <ul class="products__list">
                 {{#each model as |produtos|}}
                 <li class="products__list--item">{{#link-to 'edit' produtos.id}}{{produtos.name}}{{/link-to}}</li>
-                {{produtos.id}} {{/each}}
+                {{/each}}
             </ul>
             <ul class="products__list">
                 {{#each model as |produtos|}}
