@@ -1,33 +1,32 @@
 <section class="view__list">
-<div class="products">
-    <h2 class="products__title">Valor em R$</h2>
-    <ul class="list">
-    <ul class="products__list">
-    {{#each model as |produtos|}} 
-    <li class="products__list--item">{{produtos.name}}</li>
-    {{/each}}
-    </ul>
-    <ul class="products__list">
-    {{#each model as |produtos|}} 
-    <li class="products__list--price">R$ {{produtos.price}}</li>
-    {{/each}}
-    </ul>
-    </ul>
-</div>
-<div class="products">
-    <h2 class="products__title">Quantidade em Kg</h2>
-    <ul class="list">
-    <ul class="products__list">
-    {{#each model as |produtos|}} 
-    <li class="products__list--item">{{#link-to 'edit' produtos.id}}{{produtos.name}}{{/link-to}}</li>
-    {{produtos.id}}
-    {{/each}}
-    </ul>
-    <ul class="products__list">
-    {{#each model as |produtos|}} 
-    <li class="products__list--price">{{produtos.weight}}</li>
-    {{/each}}
-    </ul>
-    </ul>
-</div>
+    <div class="products">
+        <h2 class="products__title">Valor em R$</h2>
+        <div class="list">
+            <ul class="products__list">
+                {{#each model as |produtos|}}
+                <li class="products__list--item">{{produtos.name}}</li>
+                {{/each}}
+            </ul>
+            <ul class="products__list">
+                {{#each model as |produtos|}}
+                <li class="products__list--price">R$ {{produtos.price}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="products">
+        <h2 class="products__title">Quantidade em Kg</h2>
+        <div class="list">
+            <ul class="products__list">
+                {{#each model as |produtos|}}
+                <li class="products__list--item">{{#link-to 'edit' produtos.id}}{{produtos.name}}{{/link-to}}</li>
+                {{produtos.id}} {{/each}}
+            </ul>
+            <ul class="products__list">
+                {{#each model as |produtos|}}
+                <li class="products__list--price">{{produtos.weight}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
 </section>
