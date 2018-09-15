@@ -34,21 +34,22 @@
 }
 
 .products__list{
+    width: 70%;
     padding: 20px;
-    margin: 0 10%;
+    margin: 0 auto;
     list-style: none;
     font-weight: 600;
 }
 
-.products__list--item{
-    margin:5px 0;
-}
-
-.products__list--price{
-    color: rgba(189,103,109,1);
-    margin:5px 0;
-}
-
-::-webkit-scrollbar { 
-    display: none; 
+.itemList{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &__item{
+        margin:5px 0;
+    }
+    &__price{
+        color: rgba(189,103,109,1);
+        margin:5px 0;
+    }
 }
