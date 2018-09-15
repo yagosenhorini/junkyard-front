@@ -4,12 +4,10 @@
         <div class="list">
             <ul class="products__list">
                 {{#each model as |produtos|}}
-                <li class="products__list--item">{{produtos.name}}</li>
-                {{/each}}
-            </ul>
-            <ul class="products__list">
-                {{#each model as |produtos|}}
-                <li class="products__list--price">R$ {{produtos.price}}</li>
+                <p class="itemList">
+                    <li class="itemList__item">{{produtos.name}}</li>
+                    <li class="itemList__price">R$ {{produtos.price}}</li>
+                </p>
                 {{/each}}
             </ul>
         </div>
@@ -19,12 +17,10 @@
         <div class="list">
             <ul class="products__list">
                 {{#each model as |produtos|}}
-                <li class="products__list--item">{{#link-to 'edit' produtos.id}}{{produtos.name}}{{/link-to}}</li>
-                {{produtos.id}} {{/each}}
-            </ul>
-            <ul class="products__list">
-                {{#each model as |produtos|}}
-                <li class="products__list--price">{{produtos.weight}}</li>
+                <p class="itemList">
+                    <li class="itemList__item">{{#link-to 'edit' produtos.id}}{{produtos.name}}{{/link-to}}</li>
+                    <li class="itemList__price">{{produtos.weight}}</li>
+                </p>
                 {{/each}}
             </ul>
         </div>
