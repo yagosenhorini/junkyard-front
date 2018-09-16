@@ -5,32 +5,30 @@
     color: #fefdfc;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 700;
-}
-
-.navbar__list{
-    padding: 12.5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style: none;
-}
-
-.navbar__list--index{
-    cursor: pointer;
-    margin: 0 25px;
-    &.navbar__list--index:hover{
-        border-bottom-width: 2px;
-        border-bottom-style: solid;
-        border-bottom-color: rgba(189,103,109,1);
-    }
-}
-
-.navbar__list--item{
-    cursor: pointer;
-    margin: 0 25px;
-    &.navbar__list--item:hover{
-        border-bottom-width: 2px;
-        border-bottom-style: solid;
-        border-bottom-color: rgba(189,103,109,1);
-    }
+    &__list{
+        padding: 12.5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        list-style: none;
+        &--index{
+            cursor: pointer;
+            margin: 0 25px;
+        }
+        &--index:hover{
+            border-bottom-width: 2px;
+            border-bottom-style: solid;
+            border-bottom-color: rgba(189,103,109,1);
+            
+        }
+        &--item{
+            cursor: pointer;
+            margin: 0 25px;
+        }
+        &--item:hover{
+            border-bottom-width: 2px;
+            border-bottom-style: solid;
+            border-bottom-color: rgba(189,103,109,1);
+        }
+    }    
 }
