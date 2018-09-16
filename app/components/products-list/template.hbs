@@ -1,28 +1,27 @@
 <section class="view__list">
     <div class="products">
-        <h2 class="products__title">Valor em R$</h2>
+        <h2 class="products__title">Estoque</h2>
         <div class="list">
-            <ul class="products__list">
-                {{#each produto as |produtos|}}
-                <p class="itemList">
-                    <li class="itemList__item">{{produtos.name}}</li>
-                    <li class="itemList__price">R$ {{produtos.price}}</li>
-                </p>
-                {{/each}}
-            </ul>
-        </div>
-    </div>
-    <div class="products">
-        <h2 class="products__title">Quantidade em Kg</h2>
-        <div class="list">
-            <ul class="products__list">
-                {{#each produto as |produtos|}}
-                <p class="itemList">
-                    <li class="itemList__item">{{#link-to 'edit' produtos.id}}{{produtos.name}}{{/link-to}}</li>
-                    <li class="itemList__price">{{produtos.weight}}</li>
-                </p>
-                {{/each}}
-            </ul>
+            <table class="products__list">
+                <thead>
+                    <tr>
+                        <th class="headList">Nome</th>
+                        <th class="headList">Valor</th>
+                        <th class="headList">Pesagem</th>
+                        <th class="headList"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each produto as |produtos|}}
+                    <tr class="row">
+                        <td class="rowList">{{produtos.name}}</td>
+                        <td class="rowList">R$ {{produtos.price}}</td>
+                        <td class="rowList">{{produtos.weight}} Kg</td>
+                        {{#link-to 'edit' produtos.id}}<td class="rowList--button">Editar</td>{{/link-to}}
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
