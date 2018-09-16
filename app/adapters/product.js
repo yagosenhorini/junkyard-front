@@ -2,7 +2,7 @@ import DS from 'ember-data';
 import urlTemplates from 'ember-data-url-templates';
 
 export default DS.RESTAdapter.extend(urlTemplates, {
-    host: 'http://localhost:3000/',
+    host: 'https://ferrovelho.herokuapp.com/',
     namespace: 'v1',
     findAllUrlTemplate: '{+host}{namespace}/products',
     createRecordUrlTemplate: '{+host}{namespace}/products/',
