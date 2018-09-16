@@ -1,13 +1,12 @@
-<form class="products__form">
-    
-    <label class="products__label" for="title">Nome do Produto:</label>
-    {{input class="products__entry" name="title" id="title" type="text" placeholder="Nome do Produto"
+<form class="form">
+    <label class="form__label" for="title">Nome do Produto:</label>
+    {{input class="form__entry" name="title" id="title" type="text" placeholder="Nome do Produto"
     value=produto.name}}
-    <label class="products__label" for="price">Valor do produto:</label>
-    {{input class="products__entry" name="price" id="price" type="text" placeholder="Valor do Produto"
+    <label class="form__label" for="price">Valor do produto:</label>
+    {{input class="form__entry" name="price" id="price" type="text" placeholder="Valor do Produto"
     value=produto.price}}
-    <label class="products__label" for="instock">Quantidade em Kg:</label>
-    {{input class="products__entry" name="instock" id="instock" type="text" placeholder="Quantidade em Kg"
+    <label class="form__label" for="instock">Quantidade em Kg:</label>
+    {{input class="form__entry" name="instock" id="instock" type="text" placeholder="Quantidade em Kg"
     value=produto.weight}}
-    <button class="products__submit" {{action 'salvar' produto}}>Salvar</button>
+    <button class="form__submit" {{action 'salvar' produto}}>Salvar</button>
 </form>
