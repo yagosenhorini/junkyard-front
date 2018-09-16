@@ -25,6 +25,7 @@
     border: 1px solid white;
     border-radius: 50px;
     font-weight: 600;
+    transition: 0.45s;
     &.products__submit:hover{
         background: rgba(189,103,109,1)
     }
