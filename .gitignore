@@ -16,6 +16,7 @@
 npm-debug.log*
 yarn-error.log
 testem.log
+/.firebase
 
 # ember-try
 .node_modules.ember-try/
