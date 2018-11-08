@@ -12,16 +12,7 @@ module('Integration | Component | footer-component', function (hooks) {
 
     // Template block usage:
     await render(hbs`
-      {{#footer-component}}
-      <footer class="footer">
-      <span class="footer__copy">Copyright &copy; 2018 - Todos os direitos reservados.</span>
-      <ul class="footer__list">
-          <li class="footer__list--item"><i class="fa fa-github"></i></li>
-          <li class="footer__list--item"><i class="fa fa-linkedin-square"></i></li>
-          <li class="footer__list--item"><i class="fa fa-twitter"></i></li>
-      </ul>
-      </footer>
-      {{/footer-component}}
+      {{footer-component}}
     `);
     assert.equal(this.element.textContent.trim(), 'Copyright © 2018 - Todos os direitos reservados.', 'Text loaded');
     assert.equal(this.element.querySelectorAll('footer').length, 1, 'Footer tag loaded');
@@ -36,16 +27,7 @@ module('Integration | Component | footer-component', function (hooks) {
 
     // Template block usage:
     await render(hbs`
-      {{#footer-component}}
-      <footer class="footer">
-      <span class="footer__copy">Copyright &copy; 2018 - Todos os direitos reservados.</span>
-      <ul class="footer__list">
-          <li class="footer__list--item"><i class="fa fa-github"></i></li>
-          <li class="footer__list--item"><i class="fa fa-linkedin-square"></i></li>
-          <li class="footer__list--item"><i class="fa fa-twitter"></i></li>
-      </ul>
-      </footer>
-      {{/footer-component}}
+      {{footer-component}}
     `);
 
     assert.equal(this.element.querySelectorAll('.footer').length, 1, 'Footer class loaded');
