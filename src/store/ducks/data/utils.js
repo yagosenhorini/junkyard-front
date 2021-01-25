@@ -1,0 +1,1 @@
+export const request = (url, params) => fetch(url, params);
