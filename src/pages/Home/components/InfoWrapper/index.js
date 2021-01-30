@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import LinkWrapper from '../../../../components/Link';
+
 import * as S from './styled';
 
 const InfoWrapper = () => {
@@ -23,7 +25,7 @@ const InfoWrapper = () => {
         <S.TitleList>Preço</S.TitleList>
         <S.ListWrapper>
           {data.map((item) => (
-            <S.ListItem key={item._id}>R$ {item.price}</S.ListItem>
+            <S.ListItem key={item._id}>R$ {item.price.toFixed(2).replace('.', ',')}</S.ListItem>
           ))}
         </S.ListWrapper>
       </S.Wrapper>
@@ -31,7 +33,15 @@ const InfoWrapper = () => {
         <S.TitleList>Peso</S.TitleList>
         <S.ListWrapper>
           {data.map((item) => (
-            <S.ListItem key={item._id}>{item.weight}</S.ListItem>
+            <S.ListItem key={item._id}>{`${item.weight.toFixed(2).replace('.', ',')} Kg`}</S.ListItem>
+          ))}
+        </S.ListWrapper>
+      </S.Wrapper>
+      <S.Wrapper>
+        <S.TitleList></S.TitleList>
+        <S.ListWrapper>
+          {data.map((item) => (
+            <LinkWrapper key={item._id} to={`/update/${item._id}`}>Alterar</LinkWrapper>
           ))}
         </S.ListWrapper>
       </S.Wrapper>

@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Loader from './components/Loader';
 
 import { start } from '../../store/ducks/data';
-import InfoWrapper from './components/InfoWrapper';
+
+import Loader from './components/Loader';
 import { Main } from './components/Main/styled';
+import InfoWrapper from './components/InfoWrapper';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -23,9 +24,9 @@ const HomePage = () => {
   }
 
   return (
-    <Main>
-      <InfoWrapper />
-    </Main>
+      <Main>
+        <InfoWrapper />
+      </Main>
   );
 
 };

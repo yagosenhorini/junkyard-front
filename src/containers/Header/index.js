@@ -7,10 +7,14 @@ export const Header = () => {
     <S.Header>
       <S.HeaderList>
         <S.HeaderListItem>
-          Início
+          <S.HeaderLink to='/'>
+              Início
+          </S.HeaderLink>
         </S.HeaderListItem>
         <S.HeaderListItem>
-          Produtos
+          <S.HeaderLink to='/create'>
+            Produtos
+          </S.HeaderLink>
         </S.HeaderListItem>
       </S.HeaderList>
     </S.Header>

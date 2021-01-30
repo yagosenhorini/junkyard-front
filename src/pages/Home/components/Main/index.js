@@ -2,8 +2,8 @@ import React from 'react';
 
 import * as S from './styled';
 
-const Main = () => {
-  return <S.Main />
+const Main = ({children}) => {
+  return <S.Main>{children}</S.Main>
 };
 
 export default Main;

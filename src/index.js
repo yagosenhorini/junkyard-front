@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import Root from './core/Root';
-import HomePage from './pages/Home';
+import Footer from './containers/Footer';
+import { Header } from './containers/Header';
+import { GlobalStyle } from './config/global/styled';
+
+
+import store from './store/index';
+import Routes from './routes/routes';
 
 ReactDOM.render(
-  <Root name="FerroVelho">
-    <HomePage />
-  </Root>,
+  <React.StrictMode>
+    <Provider store={store} name="FerroVelho">
+      <GlobalStyle />
+      <Router>
+        <Header />
+        <Routes />
+      </Router>
+      <Footer />
+    </Provider>
+  </React.StrictMode>,
   document.getElementById('root')
 );

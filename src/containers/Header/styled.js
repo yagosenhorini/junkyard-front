@@ -1,11 +1,14 @@
 import styled from 'styled-components';
+import { rem } from 'polished';
+
+import { Link } from 'react-router-dom';
 
 export const Header = styled.header`
   width: 100%;
-  height: 70px;
   color: #fefdfc;
-  padding: 1.5rem;
   font-weight: 700;
+  height: ${rem(70)};
+  padding: ${rem(24)};
   background-color: #3c454c;
 `;
 
@@ -22,8 +25,13 @@ export const HeaderListItem = styled.li`
   /** */
 
   &:hover{
-    border-bottom-width: 2px;
     border-bottom-style: solid;
+    border-bottom-width: ${rem(2)};
     border-bottom-color: rgba(189,103,109,1);
   }
-`
+`;
+
+export const HeaderLink = styled(Link)`
+  color: #fefdfc;
+  text-decoration: none;
+`;

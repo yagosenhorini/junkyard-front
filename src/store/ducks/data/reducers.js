@@ -19,6 +19,8 @@ function reducer(state = initialState, { type, payload }) {
       return {...state, data: payload, isLoading: false, isError: null}
     case t.SET_DATA:
       return {...state, data: payload}
+    case t.UPDATE_DATA:
+      return {...state, data: payload}
     default:
       return state;
   }
