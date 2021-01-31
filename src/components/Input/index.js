@@ -2,17 +2,16 @@ import React from 'react';
 
 import * as S from './styled';
 
-const InputForm = ({id, name, defaultValue, disabled, errors, ref}) => {
-  return (
+const InputForm = React.forwardRef(({id, name, defaultValue, disabled, errors}, ref) =>(
+
     <S.InputForm
       id={id}
       name={name}
       defaultValue={defaultValue}
       disabled={disabled}
       errors={errors}
-      ref={ref}  
+      ref={ref}
     />
-  );
-};
+));
 
 export default InputForm;

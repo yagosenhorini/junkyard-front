@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import Main from '../../containers/Main';
 import Form from '../../containers/Form';
@@ -9,23 +8,15 @@ import SubmitButton from '../../components/Submit';
 import FormLabel from '../../components/Label';
 import InputForm from '../../components/Input';
 
+import { create } from '../../store/ducks/data';
 import useDidUpdateEffect from '../../hooks/useDidUpdateEffect';
-import { update, startProduct } from '../../store/ducks/data';
 
-import { convertToNumber } from '../../helpers/sanitizeNumber';
+import {convertToNumber} from '../../helpers/sanitizeNumber';
 
-const UpdateItem = () => {
 
-  const { id } = useParams();
+const CreateItem = () => {
+
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    (async () => {
-      dispatch(startProduct(id));
-    })();
-  }, [dispatch, id]);
-
-  const { data: {name, price, weight} } = useSelector((state) => state.data);
 
   const { register, handleSubmit, errors } = useForm();
   const [isLoading, setLoading] = useState(false);
@@ -39,12 +30,12 @@ const UpdateItem = () => {
 
     const payload = {
       name,
-      "price": convertToNumber(price),
-      "weight": convertToNumber(weight),
+      "price": Number(price.replace(',', '.')),
+      "weight": Number(weight.replace(',', '.')),
     };
 
     try {
-      dispatch(update(id, payload));
+      dispatch(create(payload));
       setSuccess(true);
     } catch(err){
       setError(true);
@@ -58,22 +49,20 @@ const UpdateItem = () => {
       const timer = setTimeout(() => {
         setError(false);
         setSuccess(false);
-        dispatch(startProduct(id))
       }, 3000);
      return () => clearTimeout(timer);
-    }, [isSuccess, isError, dispatch, id])
+    }, [isSuccess, isError])
 
-    if(isSuccess) return <Main><h1>Alterado</h1></Main>
+    if(isSuccess) return <Main><h1>Criado</h1></Main>
     if(isError) return <Main><h1>Erro</h1></Main>
 
-  return(
+  return (
     <Main>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <FormLabel>Material: {name}</FormLabel>
+        <FormLabel>Cadastrar</FormLabel>
         <InputForm 
           name="name" 
           id="formName" 
-          defaultValue={name}
           disabled={isLoading}
           errors={errors}
           ref={register}
@@ -81,7 +70,6 @@ const UpdateItem = () => {
         <InputForm 
           name="price"
           id="formPrice"
-          defaultValue={price}
           disabled={isLoading}
           errors={errors}
           ref={register}
@@ -89,15 +77,14 @@ const UpdateItem = () => {
         <InputForm 
           name="weight"
           id="formWeight"
-          defaultValue={weight}
           disabled={isLoading}
           errors={errors}
           ref={register}
         />
-        <SubmitButton type="submit" isLoading={isLoading}>Atualizar</SubmitButton>
+        <SubmitButton type="submit" isLoading={isLoading}>Cadastrar</SubmitButton>
       </Form>
     </Main>
   );
 };
 
-export default UpdateItem;
+export default CreateItem;

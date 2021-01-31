@@ -5,6 +5,6 @@ export const convertToString = ((data) => {
 }) 
 
 export const convertToNumber = ((data) => {
-  const numberData = Number(data.replace(',', '.'));
-  return numberData;
+  const clearString = data.replace(',', '.');
+  return Number(clearString);
 });

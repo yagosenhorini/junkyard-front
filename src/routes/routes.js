@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import CreateItem from '../pages/CreateItem';
 
 import HomePage from '../pages/Home/index';
 import UpdateItem from '../pages/UpdateItem/index'; 
@@ -13,6 +14,9 @@ const Routes = () => {
         </Route>
         <Route path='/update/:id'>
           <UpdateItem />
+        </Route>
+        <Route path='/create'>
+          <CreateItem />
         </Route>
       </Switch>
     </>

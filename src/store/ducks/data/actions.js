@@ -58,7 +58,37 @@ export const update = (selectedProduct, editedData) => async (dispatch) => {
   } finally {
     dispatch(setLoading(false));
   }
-}
+};
+
+export const create = (data) => async (dispatch) => {
+  dispatch(setError(false));
+  dispatch(setLoading(false));
+
+  try {
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    };
+    const options = {
+      headers,
+      mode: 'cors',
+      cache: 'default',
+      method: 'POST',
+      body: JSON.stringify(data),
+    };
+
+    const response = await request(`https://ferrovelho.herokuapp.com/v1/products/`, options);
+
+    dispatch(fetchSuccess(true));
+    dispatch(saveForm(response));
+  } catch(err) {
+    dispatch(setError(true));
+    throw new Error('Failed to create data', err);
+  } finally {
+    dispatch(setLoading(false));
+  };
+};
 
 export const start = () => async (dispatch) => {
   dispatch(setError(false));
