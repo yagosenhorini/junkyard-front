@@ -1,7 +1,6 @@
 import React from 'react';
 
 import * as S from './styled';
-import { LinkWrapper } from '../../components/Link';
 
 const Footer = () => {
   return(
