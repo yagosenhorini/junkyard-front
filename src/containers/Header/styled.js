@@ -10,6 +10,7 @@ export const Header = styled.header`
   height: ${rem(70)};
   padding: ${rem(24)};
   background-color: #3c454c;
+  box-shadow: ${rem(0)} ${rem(5)} ${rem(10)} #000;
 `;
 
 export const HeaderList = styled.ul`

@@ -11,9 +11,6 @@ import InputForm from '../../components/Input';
 import { create } from '../../store/ducks/data';
 import useDidUpdateEffect from '../../hooks/useDidUpdateEffect';
 
-import {convertToNumber} from '../../helpers/sanitizeNumber';
-
-
 const CreateItem = () => {
 
   const dispatch = useDispatch();
@@ -39,7 +36,7 @@ const CreateItem = () => {
       setSuccess(true);
     } catch(err){
       setError(true);
-      throw new Error('Failed to update data', err);
+      throw new Error('Failed to create data', err);
     } finally {
       setLoading(false);
     }
@@ -53,8 +50,8 @@ const CreateItem = () => {
      return () => clearTimeout(timer);
     }, [isSuccess, isError])
 
-    if(isSuccess) return <Main><h1>Criado</h1></Main>
     if(isError) return <Main><h1>Erro</h1></Main>
+    if(isSuccess) return <Main><h1>Criado</h1></Main>
 
   return (
     <Main>

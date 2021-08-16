@@ -84,6 +84,7 @@ export const create = (data) => async (dispatch) => {
     dispatch(saveForm(response));
   } catch(err) {
     dispatch(setError(true));
+    dispatch(fetchSuccess(false));
     throw new Error('Failed to create data', err);
   } finally {
     dispatch(setLoading(false));
@@ -103,6 +104,7 @@ export const start = () => async (dispatch) => {
 
   } catch(err) {
     dispatch(setError(true));
+    dispatch(fetchSuccess(false));
     throw new Error('Failed to get data', err);
   } finally {
     dispatch(setLoading(false));
@@ -122,6 +124,7 @@ export const startProduct = (productSelected) => async (dispatch) => {
 
   } catch(err) {
     dispatch(setError(true));
+    dispatch(fetchSuccess(false));
     throw new Error('Failed to get data', err);
   } finally {
     dispatch(setLoading(false));
